@@ -1,0 +1,8 @@
+StaffUserID,Name,Email,Password,UserName,Role
+1,Sam Weiss,sam@college.ie,java,admin,ADMIN
+2,Dr. Smith,smith@college.ie,java,admin1,LECTURER
+3,Prof. Johnson,johnson@collge.ie,java,admin2,LECTURER
+4,Dr. Williams,williams@college.ie,java,admin3,LECTURER
+5,Prof. Brown,brown@college.ie,java,admin4,LECTURER
+6,Dr. Davis,davis@college.ie,java,admin5,LECTURER
+7,Amy Williams,amy@college.ie,java,admin6,OFFICE

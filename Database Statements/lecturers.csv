@@ -1,0 +1,6 @@
+LecturerID,Name,Role,Specialty,ProgrammeID
+1,Dr. Smith,senior lecturer,Maths,4
+2,Prof. Johnson,professor,Physics,5
+3,Dr. Williams,associate lecturer,Computer Science,1
+4,Prof. Brown,programme manager,Chemistry,3
+5,Dr. Davis,senior lecturer,Biology,2
