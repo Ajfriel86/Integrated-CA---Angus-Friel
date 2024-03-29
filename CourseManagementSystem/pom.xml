@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Defines the model version of the POM. Always 4.0.0 for Maven 2 & 3. -->
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- The unique identifiers for this project within the group -->
+    <groupId>com.example</groupId> <!-- The group or organization that the project belongs to -->
+    <artifactId>myproject</artifactId> <!-- The identifier for this specific project -->
+    <version>1.0-SNAPSHOT</version> <!-- The version of the project -->
+    
+    <!-- Build configuration -->
+    <build>
+        <plugins>
+            <!-- Maven Jar Plugin for packaging projects into JAR files -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath> <!-- Include classpath in the JAR -->
+                            <classpathPrefix>lib/</classpathPrefix> <!-- Prefix for dependencies -->
+                            <mainClass>com.cms.MenuHandler</mainClass> <!-- Main class to run -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+            <!-- Maven Assembly Plugin for creating a JAR including all dependencies -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.cms.MenuHandler</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef> <!-- Descriptor for packaging -->
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- Custom execution ID -->
+                        <phase>package</phase> <!-- Bind to the package lifecycle phase -->
+                        <goals>
+                            <goal>single</goal> <!-- Goal to create a single, executable JAR -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Project dependencies -->
+    <dependencies>
+        <!-- Apache POI for working with Microsoft Office documents -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+        
+        <!-- MySQL JDBC Driver for connecting to MySQL databases -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.26</version>
+        </dependency>
+        
+        <!-- Oracle JDBC Driver for connecting to Oracle databases -->
+        <dependency>
+            <groupId>com.oracle.jdbc</groupId>
+            <artifactId>ojdbc11</artifactId>
+            <version>11.2.0.4</version>
+        </dependency>
+
+        <!-- JUnit 5 for unit testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- JUnit 4 for unit testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
